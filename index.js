@@ -28,32 +28,13 @@ function createWindow() {
   });
 }
 
-function createMainMenu() {
-  const template = [
-    {
-      label: "Lists",
-      submenu: [
-        {
-          label: "Create new list",
-          accelerator: "CommandOrControl+N",
-          click() {
-            mainWindow.webContents.send("create-list");
-          }
-        }
-      ]
-    }
-  ];
-
-  const menu = Menu.buildFromTemplate(template);
-  Menu.setApplicationMenu(menu);
-}
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on("ready", () => {
   createWindow();
-  createMainMenu();
+
 });
 
 // Quit when all windows are closed.
